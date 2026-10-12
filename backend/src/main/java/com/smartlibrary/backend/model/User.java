@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
@@ -20,6 +21,12 @@ public class User {
 
     @Column(nullable = false)
     private String name;
+
+    @Column(name = "full_name")
+    private String fullName;
+
+    @Column(name = "mobile")
+    private String mobile;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -39,6 +46,8 @@ public class User {
     public User(Long id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
+        this.fullName = name;
+        this.mobile = null;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -51,6 +60,28 @@ public class User {
         }
         if (this.role == null || this.role.isBlank()) {
             this.role = "STUDENT";
+        }
+        if (this.fullName == null || this.fullName.isBlank()) {
+            this.fullName = this.name != null ? this.name : "";
+        }
+        if (this.name == null || this.name.isBlank()) {
+            this.name = this.fullName;
+        }
+        if (this.mobile != null && this.mobile.isBlank()) {
+            this.mobile = null;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        if (this.fullName == null || this.fullName.isBlank()) {
+            this.fullName = this.name != null ? this.name : "";
+        }
+        if (this.name == null || this.name.isBlank()) {
+            this.name = this.fullName;
+        }
+        if (this.mobile != null && this.mobile.isBlank()) {
+            this.mobile = null;
         }
     }
 
@@ -68,6 +99,28 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+        if (this.fullName == null || this.fullName.isBlank()) {
+            this.fullName = name;
+        }
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+        if (this.name == null || this.name.isBlank()) {
+            this.name = fullName;
+        }
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getEmail() {

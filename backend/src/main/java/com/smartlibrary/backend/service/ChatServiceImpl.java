@@ -31,7 +31,7 @@ public class ChatServiceImpl implements ChatService {
 
         if (userMessage.isEmpty()) {
             return new ChatResponse(
-                    "Hello! I am Athena, your Smart Library Assistant. How can I help you today? You can ask me to search books, check availability, or get recommendations by subject.",
+                    "Hello! I am Athena, your AI Smart Library Assistant. How can I help you today? You can ask me to search books, check availability, or get recommendations by subject.",
                     "smart-assistant",
                     false
             );
