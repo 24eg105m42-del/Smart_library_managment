@@ -24,8 +24,8 @@ export default function AIAssistantModal({ isOpen, onClose }) {
     {
       id: 1,
       sender: 'assistant',
-      text: "Hello! I am Athena, your AI Smart Library Assistant. I'm connected to the real-time library inventory and powered by Google Gemini. Ask me about available textbooks, study plans, or specific subjects!",
-      model: 'gemini-2.5-flash',
+      text: "Hello! I am Athena, your AI Smart Library Assistant. I'm directly connected to our real-time library catalog and database. Ask me about available textbooks, study recommendations, or specific subjects!",
+      model: 'smart-assistant',
       time: 'Online'
     }
   ]);
@@ -70,7 +70,7 @@ export default function AIAssistantModal({ isOpen, onClose }) {
         id: createId(),
         sender: 'assistant',
         text: response.reply || 'No response generated.',
-        model: response.model || 'gemini-2.5-flash',
+        model: response.model || 'smart-assistant',
         fallback: response.fallback,
         time: getTimeString()
       };
@@ -103,7 +103,7 @@ export default function AIAssistantModal({ isOpen, onClose }) {
         id: createId(),
         sender: 'assistant',
         text: "Conversation cleared. How else may I assist you with the library catalog or your studies?",
-        model: 'gemini-2.5-flash',
+        model: 'smart-assistant',
         time: getTimeString()
       }
     ]);
@@ -222,7 +222,7 @@ export default function AIAssistantModal({ isOpen, onClose }) {
             </button>
           </div>
           <div className="ai-footer-hint">
-            <span>Spring AI + Gemini 2.5 Flash • Context: Real-time Database Catalog</span>
+            <span>Smart Catalog AI Assistant • Real-time Database Context</span>
           </div>
         </div>
       </div>

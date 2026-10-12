@@ -13,7 +13,7 @@ export default function Footer({ onOpenChat, onNavigate, backendOnline }) {
             <span className="footer-brand-title">SmartLibrary</span>
           </div>
           <p className="footer-desc">
-            An intelligent, AI-assisted library management system uniting Spring Boot, React, and Google Gemini to streamline textbook discovery and research.
+            An intelligent library management system uniting Spring Boot, MySQL, and React to streamline textbook discovery and research.
           </p>
           <div className="footer-status-badge">
             <span className={`status-indicator-dot ${backendOnline ? 'online' : 'offline'}`} />
@@ -35,8 +35,8 @@ export default function Footer({ onOpenChat, onNavigate, backendOnline }) {
           <h4 className="footer-heading">Technologies</h4>
           <ul className="footer-links">
             <li><span>Java 21 & Spring Boot 4</span></li>
-            <li><span>Spring AI & Google Gemini</span></li>
-            <li><span>Spring Data JPA & Relational DB</span></li>
+            <li><span>Aiven Cloud MySQL & JPA</span></li>
+            <li><span>Spring Security & BCrypt</span></li>
             <li><span>React 19 & Vite 8</span></li>
           </ul>
         </div>

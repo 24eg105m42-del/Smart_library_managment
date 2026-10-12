@@ -8,7 +8,7 @@ export default function HeroLanding({ onExploreCatalog, onOpenChat, onOpenAuth, 
       <section className="hero-banner">
         <div className="hero-badge">
           <SparklesIcon className="icon-xs" />
-          <span>Spring AI & Google Gemini 2.5 Integrated</span>
+          <span>Intelligent Catalog & AI Assistant Integrated</span>
         </div>
 
         <h1 className="hero-title">
@@ -88,10 +88,10 @@ export default function HeroLanding({ onExploreCatalog, onOpenChat, onOpenAuth, 
             <div className="feature-icon-box teal">
               <SparklesIcon className="icon-md" />
             </div>
-            <div className="badge-ai-pill">Google Gemini</div>
+            <div className="badge-ai-pill">Athena Assistant</div>
             <h3>AI Research Assistant</h3>
             <p>
-              Powered by Spring AI and Google Gemini 2.5 Flash. Ask for tailored study plans, explanations of complex concepts, or book recommendations based on actual stock.
+              Directly integrated with the library database. Ask for tailored study plans, book recommendations based on live stock, and topic explanations.
             </p>
             <ul className="feature-bullets">
               <li><CheckIcon className="icon-xs text-emerald" /> Context-aware catalog recommendations</li>
